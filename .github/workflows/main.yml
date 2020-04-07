@@ -18,10 +18,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout project
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: CDK check
-      - run: 'cdk --version'
-        
-
-      
+        run: 'cdk --version'
