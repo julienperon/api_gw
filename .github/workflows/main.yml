@@ -14,11 +14,13 @@ on:
 jobs:
   my_first_job:
     runs-on: ubuntu-latest
+    container: julienperon/aws-cdk:latest
     steps:
-      - name: Container init
-      - uses: docker://julienperon/aws-cdk:latest         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout project
       - uses: actions/checkout@v2
+
+      - name: CDK check
       - run: 'cdk --version'
         
 
