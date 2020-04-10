@@ -1,0 +1,5 @@
+-e .
+flake8
+aws-cdk.core
+aws-cdk.aws_lambda
+aws-cdk.aws_apigateway

@@ -22,3 +22,6 @@ jobs:
 
       - name: CDK check
         run: 'cdk --version'
+
+      - name: Requirements install
+        run: 'pip install -r requirements.txt'
