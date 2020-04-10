@@ -15,12 +15,12 @@ def integration_response():
 
 def GET_response():
     return [{
-                    'statusCode': '200',
-                    'responseParameters': {
-                        'method.response.header.Access-Control-Allow-Origin': True,
-                }
-            }
-        ]
+        'statusCode': '200',
+        'responseParameters': {
+            'method.response.header.Access-Control-Allow-Origin': True,
+        }
+    }
+    ]
 
 
 class LambdaStack(core.Stack):
