@@ -34,4 +34,4 @@ jobs:
           aws-region: eu-west-1
 
       - name: Deployment
-        run: 'cdk deploy'
+        run: 'cdk deploy ApiGatewayStack'
