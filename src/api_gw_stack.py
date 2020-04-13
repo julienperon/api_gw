@@ -16,7 +16,7 @@ class ApiGatewayStack(core.Stack):
 
         # Lambda Integration
         dummy_entity = base_api.root.add_resource('dummy')
-        dummy_lambda_integration = apigw.LambdaIntegration(dummy_lambda.cdk_function,
+        dummy_lambda_integration = apigw.LambdaIntegration(dummy_lambda,
                                                            proxy=False,
                                                            integration_responses=api_gw_integration.integration_response())
 
