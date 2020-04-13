@@ -22,7 +22,7 @@ def GET_response():
     ]
 
 
-def dummy_lambda_construct(self, identifier: str, function_name: str):
+def dummy_lambda_construct(self, identifier: str, function_name=''):
     if not function_name:
         function_name = identifier
     return aws_lambda.Function(self, identifier,
