@@ -1,6 +1,7 @@
 from aws_cdk import core
 from aws_cdk import aws_apigateway as apigw
-from src.api_lambda.dummy_lambda import api_gw_integration
+from aws_cdk import aws_lambda
+from src.api_lambda import api_gw_integration
 
 
 class ApiGatewayStack(core.Stack):
@@ -9,7 +10,12 @@ class ApiGatewayStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         # API GW lambdas first:
-        dummy_lambda = api_gw_integration.dummy_lambda_construct(self, 'dummy_lambda')
+        dummy_lambda = aws_lambda.Function(self, id,
+                                           function_name='dummy_lambda',
+                                           handler='lambda_handler.handler',
+                                           runtime=aws_lambda.Runtime.PYTHON_3_7,
+                                           code=aws_lambda.Code.asset('src/api_lambda/dummy_lambda'),
+                                           )
 
         # API Gateway
         base_api = apigw.RestApi(self, 'ApiGatewayWithCors')
