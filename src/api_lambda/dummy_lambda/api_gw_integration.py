@@ -29,6 +29,7 @@ class LambdaStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         self.cdk_function = aws_lambda.Function(self, id,
+                                                function_name=id,
                                                 handler='lambda_handler.handler',
                                                 runtime=aws_lambda.Runtime.PYTHON_3_7,
                                                 code=aws_lambda.Code.asset('src/api_lambda/dummy_lambda'),
