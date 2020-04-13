@@ -9,7 +9,7 @@ class ApiGatewayStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         # API GW lambdas first:
-        dummy_lambda = api_gw_integration.LambdaStack(self, 'dummy_lambda')
+        dummy_lambda = api_gw_integration.dummy_lambda_construct(self, 'dummy_lambda')
 
         # API Gateway
         base_api = apigw.RestApi(self, 'ApiGatewayWithCors')
