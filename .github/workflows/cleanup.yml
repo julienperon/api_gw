@@ -32,4 +32,6 @@ jobs:
           aws-region: eu-west-1
 
       - name: Deployment
-        run: 'cdk destroy ApiGatewayStack -f'
+        run: |
+          cdk destroy CognitoStack -f
+          cdk destroy ApiGatewayStack -f

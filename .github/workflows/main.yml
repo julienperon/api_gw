@@ -34,4 +34,6 @@ jobs:
           aws-region: eu-west-1
 
       - name: Deployment
-        run: 'cdk deploy ApiGatewayStack --require-approval=never'
+        run: |
+          cdk deploy CognitoStack --require-approval=never
+          cdk deploy ApiGatewayStack --require-approval=never
