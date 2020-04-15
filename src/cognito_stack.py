@@ -15,5 +15,7 @@ class CognitoStack(core.Stack):
         api_client = user_pool.add_client("customer-app-client")
         client_id = api_client.user_pool_client_id
 
-        cognito_idp = aws_cognito.CfnIdentityPool(self, "IdentityPool", identity_pool_name="Myawesomeapp-idp")
+        cognito_idp = aws_cognito.CfnIdentityPool(self, "IdentityPool",
+                                                  identity_pool_name="Myawesomeapp-idp",
+                                                  allow_unauthenticated_identities=False)
         cognito_idp.CognitoIdentityProviderProperty(client_id=client_id)
